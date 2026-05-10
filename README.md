@@ -7,15 +7,27 @@ Observer 是一个个人新闻聚合系统：后端抓取 RSS 和部分需要登
 - `news-aggregator/`: Next.js 14 前端
 - `observer-backend/`: FastAPI + Celery + Postgres 后端
 
-`imgs/` 目录是本地截图素材，已经加入 `.gitignore`，不会随提交进入仓库。
+`imgs/` 目录是本地截图素材，已经加入 `.gitignore`，不会随提交进入仓库。README 使用的是 `docs/images/` 里的可公开截图副本。
 
 ## 界面概览
 
-本 README 根据 `imgs/` 里的三张本地截图和当前代码整理：
+### Brief Feed
 
-- `home.png`: 首页 brief feed，显示故事数、来源数、语言数、最近抓取时间；右侧有 AI Brief 面板，可选择 provider 并生成当天摘要；下方支持语言、地区、免费/付费、列表/网格视图过滤。
-- `sources.png`: 来源管理页，展示 11 个来源、6 个付费源、Cookie 状态、最近抓取时间和 24 小时文章量；支持新增免费 RSS 来源。
-- `sub.png`: subscriptions 页，按来源分组显示文章卡片，适合快速扫读每个来源的最新标题；实体/人物追踪入口在 settings。
+![Observer brief feed](docs/images/home.png)
+
+首页 brief feed 显示故事数、来源数、语言数、最近抓取时间；右侧有 AI Brief 面板，可选择 provider 并生成当天摘要；下方支持语言、地区、免费/付费、列表/网格视图过滤。
+
+### Sources
+
+![Observer sources page](docs/images/sources.png)
+
+来源管理页展示 11 个来源、6 个付费源、Cookie 状态、最近抓取时间和 24 小时文章量；支持新增免费 RSS 来源。
+
+### Subscriptions
+
+![Observer subscriptions page](docs/images/subscriptions.png)
+
+Subscriptions 页按来源分组显示文章卡片，适合快速扫读每个来源的最新标题；实体/人物追踪入口在 settings。
 
 ## 功能
 
