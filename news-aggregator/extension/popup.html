@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Observer Cookie Bridge</title>
+<style>
+  :root {
+    --bg: #1f2025;
+    --bg-elev: #2a2b31;
+    --fg: #e6e7eb;
+    --fg-soft: #b0b1b8;
+    --fg-faint: #7a7b82;
+    --line: #3a3b42;
+    --mark: #66c5d9;
+    --mark-soft: #4a8fa0;
+    --hot: #d97c6c;
+    --warn: #d9b266;
+  }
+  * { box-sizing: border-box; }
+  body {
+    width: 320px;
+    margin: 0;
+    padding: 12px;
+    background: var(--bg);
+    color: var(--fg);
+    font: 12px/1.5 ui-monospace, 'SF Mono', 'JetBrains Mono', monospace;
+  }
+  h1 {
+    font-size: 12px;
+    color: var(--mark);
+    margin: 0 0 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .src {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .src:last-of-type { border-bottom: 0; }
+  .src .name { color: var(--fg); font-weight: 600; font-size: 12px; }
+  .src .meta { color: var(--fg-faint); font-size: 10px; }
+  .src button {
+    background: var(--mark);
+    color: var(--bg);
+    border: 0;
+    padding: 4px 10px;
+    font: 600 10px/1 ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+  }
+  .src button:hover { background: var(--mark-soft); color: var(--fg); }
+  .src button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .config {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px;
+    align-items: center;
+  }
+  .config label {
+    color: var(--fg-faint);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .config input {
+    background: var(--bg-elev);
+    border: 1px solid var(--line);
+    color: var(--fg);
+    font: inherit;
+    font-size: 11px;
+    padding: 3px 5px;
+  }
+  .config input:focus {
+    outline: 0;
+    border-color: var(--mark-soft);
+  }
+  .status {
+    margin-top: 10px;
+    color: var(--fg-faint);
+    min-height: 28px;
+    font-size: 11px;
+    word-break: break-word;
+  }
+  .status.ok { color: var(--mark); }
+  .status.err { color: var(--hot); }
+  .status.warn { color: var(--warn); }
+</style>
+</head>
+<body>
+  <h1>▸ Observer Cookie Bridge</h1>
+  <div id="sources"></div>
+  <div class="config">
+    <label>obs ↦</label>
+    <input id="endpoint" placeholder="http://localhost:4433">
+  </div>
+  <div class="status" id="status">log into the site in any tab, then click ▸ send</div>
+  <script src="popup.js"></script>
+</body>
+</html>

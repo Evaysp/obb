@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Observer Cookie Bridge",
+  "version": "0.1.0",
+  "description": "One-click import of paywall cookies (Nikkei, FT, Bloomberg, etc.) into the Observer aggregator.",
+  "permissions": ["cookies", "storage", "tabs"],
+  "host_permissions": [
+    "https://*.nikkei.com/*",
+    "https://*.ft.com/*",
+    "https://*.bloomberg.com/*",
+    "https://*.economist.com/*",
+    "https://*.scmp.com/*",
+    "https://*.caixin.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*",
+    "http://192.168.2.240/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Observer Cookie Bridge"
+  }
+}
