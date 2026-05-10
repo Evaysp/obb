@@ -131,15 +131,6 @@ docker compose exec api pytest
 
 ## 配置与隐私
 
-不要提交真实密钥、Cookie 或本地依赖。根目录 `.gitignore` 已忽略：
-
-- `imgs/`
-- `.env`、`.env.*`，但保留 `.env.example` / `.env.*.example`
-- `node_modules/`、`.next/`
-- `.venv/`、`__pycache__/`
-- cookies、tokens、keys、secrets、证书和私钥
-- 日志、系统文件和编辑器配置
-
 后端的 Cookie 和 AI provider key 在数据库中用 Fernet 加密保存。生产部署前必须替换 `.env.example` / `docker-compose.yml` 里的开发占位密钥：
 
 ```bash
